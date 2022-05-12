@@ -97,3 +97,23 @@ body{
     width: 75%;
     float: right;
 }
+
+.error{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    color: #a94442;
+    background: #f2dede;
+    border-radius: 5px;
+    text-align: left;
+    position: absolute;
+    top: 40%;
+    left: -20%;
+}
+
+.success{
+    color: #3c763d;
+    background: #dff0d8;
+    border: 1px solid #3c763d;
+    margin-bottom: 20px;
+}

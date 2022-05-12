@@ -1,3 +1,8 @@
+<!-- PHP script -->
+<?php
+    include('server.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,11 +25,11 @@
                 </div>
                 <div class="nav-tabs">
                     <ul class="nav-list">
-                        <li class="nav-list-item"><a href="./index.html" class="active">Home</a></li>
+                        <li class="nav-list-item"><a href="./index.php" class="active">Home</a></li>
                         <li class="nav-list-item"><a href="" class="nav-link">Agriculture</a></li>
                         <li class="nav-list-item"><a href="" class="nav-link">Rearing</a></li>
-                        <li class="nav-list-item"><a href="./login.html" class="nav-btn">Login</a></li>
-                        <li class="nav-list-item"><a href="./register.html" class="nav-btn-outline">Register</a></li>
+                        <li class="nav-list-item"><a href="./login.php" class="nav-btn">Login</a></li>
+                        <li class="nav-list-item"><a href="#" class="nav-btn-outline">Register</a></li>
                     </ul>
                 </div>
             </nav>
@@ -33,24 +38,25 @@
             <div class="register-hero">
                 <div class="register-form">
                     <h2>Registration Form</h2>
-                    <form action="" method="post">
+                    <form action="register.php" method="post">
+                        <?php include('errors.php'); ?>
                         <div class="input-field">
                             <label for="">Username</label> <br>
-                            <input type="text" name="user_name" class="form-input" placeholder="Enter your name">
+                            <input type="text" name="username" class="form-input" value="<?php echo $username; ?>" placeholder="Enter your name">
                         </div>
                         <div class="input-field">
                             <label for="">Email</label> <br>
-                            <input type="email" name="email" class="form-input" placeholder="Enter your email">
+                            <input type="email" name="email" class="form-input" value="<?php echo $email; ?>" placeholder="Enter your email">
                         </div>
                         <div class="input-field">
                             <label for="">Password</label> <br>
-                            <input type="password" name="password" class="form-input" placeholder="Enter your password">
+                            <input type="password" name="password_1" class="form-input" placeholder="Enter your password">
                         </div>
                         <div class="input-field">
                             <label for="">Confirm Password</label> <br>
-                            <input type="password" name="password2" class="form-input" placeholder="Re-enter password">
+                            <input type="password" name="password_2" class="form-input" placeholder="Re-enter password">
                         </div>
-                        <input type="submit" value="Sign Up" class="form-btn">
+                        <input type="submit" value="Sign Up" name="reg_user" class="form-btn">
                     </form>
                 </div>
                 <div class="register-img">

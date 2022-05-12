@@ -1,3 +1,20 @@
+<!-- PHP Script -->
+<?php
+    session_start();
+
+    if (isset($_SESSION['username'])){
+        $_SESSION['msg'] = "You must log in first.";
+        header('location: login.php');
+    }
+
+    if (isset($_GET['logout'])){
+        session_destroy();
+        unset($_SESSION['username']);
+        header('location: login.php');
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +26,9 @@
     <!-- Custom CSS file -->
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
 </head>
 <body>
     <!-- Start Header Section -->
@@ -20,11 +40,16 @@
                 </div>
                 <div class="nav-tabs">
                     <ul class="nav-list">
-                        <li class="nav-list-item"><a href="" class="active">Home</a></li>
+                        <li class="nav-list-item"><a href="#" class="active">Home</a></li>
                         <li class="nav-list-item"><a href="" class="nav-link">Agriculture</a></li>
                         <li class="nav-list-item"><a href="" class="nav-link">Rearing</a></li>
-                        <li class="nav-list-item"><a href="login.html" class="nav-btn">Login</a></li>
-                        <li class="nav-list-item"><a href="register.html" class="nav-btn-outline">Register</a></li>
+                        <?php if (isset($_SESSION['username'])) : ?>
+                            <li class="nav-list-item"><a href="./register.php" class="nav-btn-outline">Logout</a></li>
+                            <li class="nav-list-item"><a href="index.php?logout='1'" class="nav-link" style="color: #272727;">Joel Fah</a></li>
+                        <?php else : ?>
+                            <li class="nav-list-item"><a href="./login.php" class="nav-btn">Login</a></li>
+                            <li class="nav-list-item"><a href="./register.php" class="nav-btn-outline">Register</a></li>
+                        <?php endif ?>
                     </ul>
                 </div>
             </nav>
@@ -32,6 +57,21 @@
             <!-- Start Hero Section -->
             <div class="hero">
                 <div class="hero-text">
+
+                    <!-- Notification message -->
+                    <?php if (isset($_SESSION['succes'])) : ?>
+                        <div class="success">
+                            <h6>
+                                <?php 
+                                    echo $_SESSION['success'];
+                                    unset($_SESSION['success']);
+                                ?>
+                            </h6>
+                        </div>
+                    <?php endif ?>
+                    <!-- End notification -->
+
+                    <!-- Logged in user -->
                     <h1>Agrear<span>.</span></h1>
                     <p>
                         Welcome to the website of our commune of Yaounde I. On this platform we present to you our various agriculture and
