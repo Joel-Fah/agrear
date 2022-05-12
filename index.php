@@ -2,7 +2,7 @@
 <?php
     session_start();
 
-    if (isset($_SESSION['username'])){
+    if (!$_SESSION['connected']){
         $_SESSION['msg'] = "You must log in first.";
         header('location: login.php');
     }
@@ -44,8 +44,8 @@
                         <li class="nav-list-item"><a href="" class="nav-link">Agriculture</a></li>
                         <li class="nav-list-item"><a href="" class="nav-link">Rearing</a></li>
                         <?php if (isset($_SESSION['username'])) : ?>
-                            <li class="nav-list-item"><a href="./register.php" class="nav-btn-outline">Logout</a></li>
-                            <li class="nav-list-item"><a href="index.php?logout='1'" class="nav-link" style="color: #272727;">Joel Fah</a></li>
+                            <li class="nav-list-item"><a href="./index.php" class="nav-btn"><?php echo $_SESSION['username']; ?></a></li>
+                            <li class="nav-list-item"><a href="index.php?logout='1'" class="nav-btn-outline">Logout</a></li>
                         <?php else : ?>
                             <li class="nav-list-item"><a href="./login.php" class="nav-btn">Login</a></li>
                             <li class="nav-list-item"><a href="./register.php" class="nav-btn-outline">Register</a></li>

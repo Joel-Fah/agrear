@@ -133,6 +133,21 @@ section.header{
     border-color: #177c43bb;
 }
 
+.nav-tabs .nav-btn-account{
+    background: #272727;
+    padding: 7px 5%;
+    color: var(--white-color);
+    border-radius: 10px;
+    background-image: none;
+    border: 1px solid #272727;
+    transition: all .3s ease-out;
+}
+
+.nav-tabs .nav-btn-account:hover{
+    background: #363636;
+    border-color: #272727;
+}
+
 .nav-tabs .nav-btn-outline{
     border: 2px solid var(--primary-color);
     padding: 6px 3%;
