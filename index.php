@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,7 @@
     <title>Agrear</title>
 
     <!-- Custom CSS file -->
+    <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -23,8 +23,8 @@
                         <li class="nav-list-item"><a href="" class="active">Home</a></li>
                         <li class="nav-list-item"><a href="" class="nav-link">Agriculture</a></li>
                         <li class="nav-list-item"><a href="" class="nav-link">Rearing</a></li>
-                        <li class="nav-list-item"><a href="" class="nav-btn">Login</a></li>
-                        <li class="nav-list-item"><a href="" class="nav-btn-outline">Register</a></li>
+                        <li class="nav-list-item"><a href="login.html" class="nav-btn">Login</a></li>
+                        <li class="nav-list-item"><a href="register.html" class="nav-btn-outline">Register</a></li>
                     </ul>
                 </div>
             </nav>

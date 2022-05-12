@@ -1,0 +1,99 @@
+/* CSS variables */
+:root{
+    /* Colors */
+    --primary-color: #177C43;
+    --secondary-color: #7BBC45;
+    --contrast-color: #E6982B;
+    --light-color: #90C58D;
+    --white-color: #ffffff;
+
+    /* Fonts */
+    --font: 'Poppins', sans-serif;
+}
+
+body{
+    overflow: hidden;
+}
+
+.register-hero{
+    display: flex;
+    padding: 15% 10%;
+    margin: auto;
+}
+
+.register-form{
+    width: 100%;
+    background: linear-gradient(rgb(144, 197, 141, .5), rgb(144, 197, 141, .5)), url('../img/wave2.svg') no-repeat bottom;
+    box-shadow: 0 8px 32px 0 var(--secondary-color);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    background-size: cover;
+    border-radius: 0 100% 0 0;
+}
+
+.register-form h2{
+    text-align: center;
+    font-size: 25pt;
+    color: var(--primary-color);
+    position: relative;
+    top: -70px;
+}
+
+.register-form .input-field{
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.register-form .input-field label{
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.register-form .input-field .form-input{
+    width: inherit;
+    height: 2.5rem;
+    border-radius: 10px;
+    border: none;
+    padding: 3px 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 14pt;
+    font-weight: 600;
+}
+
+.register-form .input-field .form-input:active,
+.register-form .input-field .form-input:focus{
+    outline: none;
+}
+
+.register-form .form-btn{
+    border: none;
+    padding: 5px 10px;
+    background: linear-gradient(#177C4350, #7BBC4550);
+    margin: auto;
+    width: 100%;
+    height: 2rem;
+    font-size: 16pt;
+    font-weight: bold;
+    color: var(--white-color);
+    transition: all .3s ease-in;
+}
+
+.register-form .form-btn:hover{
+    cursor: pointer;
+    background: linear-gradient(#177C43, #7BBC45);
+}
+
+.register-form .input-field .form-input::placeholder{
+    color: #ffffffbb;
+    font-weight: normal;
+}
+
+.register-hero .register-img{
+    width: 100%;
+}
+
+.register-hero .register-img img{
+    width: 75%;
+    float: right;
+}
